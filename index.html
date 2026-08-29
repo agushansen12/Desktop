@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analyst Portfolio | Visionary Insights</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Chart.js para visualización de datos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        :root {
+            --bg: #0a0a0c;
+            --surface: #16161a;
+            --primary: #3b82f6;
+            --accent: #60a5fa;
+            --text-main: #f8fafc;
+            --text-dim: #94a3b8;
+            --border: #2d2d35;
+            --font-sans: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            background: radial-gradient(circle at 90% 10%, rgba(59, 130, 246, 0.05) 0%, transparent 40%);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            background: rgba(10, 10, 12, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-mono);
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -1px;
+            color: var(--primary);
+        }
+
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- Hero Section --- */
+        .hero-content h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 span {
+            display: block;
+            color: var(--primary);
+            filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.3));
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-mono);
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 8rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::after {
+            content: "";
+            height: 1px;
+            background: var(--border);
+            flex-grow: 1;
+        }
+
+        /* --- Stats/Chart Card --- */
+        .analysis-preview {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .analysis-preview { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 2.5rem; }
+        }
+
+        /* --- Project Grid --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.3s, border-color 0.3s;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .project-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .tag {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--primary);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        /* --- Skills --- */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: var(--surface);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+
+        /* --- Contact --- */
+        .contact-area {
+            text-align: center;
+            background: linear-gradient(to bottom, var(--surface), transparent);
+            padding: 4rem 2rem;
+            border-radius: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: opacity 0.3s;
+        }
+
+        .btn:hover { opacity: 0.9; }
+
+        footer {
+            padding: 4rem 0;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+            font-family: var(--font-mono);
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">DATA_ARCHITECT_</div>
+            <div class="nav-links">
+                <a href="#about">Sobre mí</a>
+                <a href="#projects">Proyectos</a>
+                <a href="#skills">Habilidades</a>
+                <a href="#contact">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-subtitle">// Analista de Datos & Estratega Digital</p>
+                <h1>Transformando <span>datos complejos</span> en decisiones accionables.</h1>
+                <p class="hero-subtitle">Especializado en Python, SQL y Visualización Avanzada. Ayudo a las empresas a descubrir historias ocultas en sus datasets.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#projects" class="btn">Ver Proyectos</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- Analysis Section (Interactive) -->
+        <section id="about">
+            <div class="section-title">Análisis de Impacto</div>
+            <div class="analysis-preview">
+                <div>
+                    <h2>Data Driven Mindset</h2>
+                    <p style="color: var(--text-dim); margin-top: 1rem;">
+                        No solo recolecto datos; construyo puentes entre los números y la estrategia de negocio. Mi enfoque se basa en la limpieza técnica rigurosa y la narrativa visual clara.
+                    </p>
+                    <div style="margin-top: 2rem;">
+                        <div style="margin-bottom: 1rem;">
+                            <small style="color: var(--primary); font-family: var(--font-mono);">PRECISIÓN DE MODELADO</small>
+                            <div style="height: 4px; background: var(--border); width: 100%; margin-top: 5px;">
+                                <div style="height: 100%; background: var(--primary); width: 98%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <small style="color: var(--primary); font-family: var(--font-mono);">OPTIMIZACIÓN DE PROCESOS</small>
+                            <div style="height: 4px; background: var(--border); width: 100%; margin-top: 5px;">
+                                <div style="height: 100%; background: var(--primary); width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 10px;">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="section-title">Proyectos Destacados</div>
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <i data-lucide="bar-chart-3" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Análisis de Churn Predictivo</h3>
+                    <p style="color: var(--text-dim); font-size: 0.9rem;">Modelo de ML para identificar clientes en riesgo de abandono para una SaaS financiera.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Scikit-Learn</span>
+                        <span class="tag">Pandas</span>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <i data-lucide="database" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Optimización de Inventario SQL</h3>
+                    <p style="color: var(--text-dim); font-size: 0.9rem;">Arquitectura de base de datos y consultas complejas para reducir stock inactivo en un 20%.</p>
+                    <div class="project-tags">
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">ETL</span>
+                        <span class="tag">Tableau</span>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <i data-lucide="pie-chart" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                    <h3>Dashboard Ejecutivo Retail</h3>
+                    <p style="color: var(--text-dim); font-size: 0.9rem;">Visualización interactiva en tiempo real conectada a APIs de ventas globales.</p>
+                    <div class="project-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">DAX</span>
+                        <span class="tag">API Integration</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="section-title">Stack Tecnológico</div>
+            <div class="skills-container">
+                <div class="skill-item">Python (Pandas/NumPy)</div>
+                <div class="skill-item">SQL Avanzado</div>
+                <div class="skill-item">Tableau / Power BI</div>
+                <div class="skill-item">Excel (VBA)</div>
+                <div class="skill-item">Machine Learning</div>
+                <div class="skill-item">Google BigQuery</div>
+                <div class="skill-item">R Studio</div>
+                <div class="skill-item">Airflow</div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact-area">
+                <i data-lucide="mail" size="48" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                <h2>¿Listo para dar sentido a tus datos?</h2>
+                <p style="color: var(--text-dim); margin-top: 1rem;">Estoy disponible para proyectos freelance y colaboraciones a tiempo completo.</p>
+                <a href="mailto:tuemail@ejemplo.com" class="btn">Enviar un Mensaje</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 // DATA_ARCHITECT_PORTFOLIO // Built with precision.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Inicializar Iconos
+        lucide.createIcons();
+
+        // Configuración de Chart.js
+        const ctx = document.getElementById('myChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Tendencia de Eficiencia Data-Driven',
+                    data: [30, 45, 42, 60, 75, 95],
+                    borderColor: '#3b82f6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    borderWidth: 2,
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#2d2d35' },
+                        ticks: { color: '#94a3b8', font: { family: 'JetBrains Mono' } }
+                    },
+                    x: {
+                        grid: { display: false },
+                        ticks: { color: '#94a3b8', font: { family: 'JetBrains Mono' } }
+                    }
+                }
+            }
+        });
+
+        // Efecto de Scroll suave para los links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

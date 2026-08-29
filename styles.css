@@ -232,7 +232,7 @@ section {
     border-radius: 4px;
 }
 
-/* Skills */
+/* Skills - Herramientas */
 .skills-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -264,6 +264,12 @@ section {
 .skill-icon {
     font-size: 2rem;
     color: var(--primary);
+}
+.skill-logo {
+    width: 40px;
+    height: 40px;
+    color: var(--primary);
+    stroke: var(--primary);
 }
 .skill-item p {
     margin: 0;
@@ -369,6 +375,11 @@ footer {
         font-size: 1.5rem;
     }
     
+    .skill-logo {
+        width: 32px;
+        height: 32px;
+    }
+    
     .project-grid {
         grid-template-columns: 1fr;
     }
@@ -450,6 +461,11 @@ footer {
     
     .skill-icon {
         font-size: 1.25rem;
+    }
+    
+    .skill-logo {
+        width: 28px;
+        height: 28px;
     }
     
     .skill-item p {

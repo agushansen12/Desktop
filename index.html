@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portafolio de Agustin Hansen — Contador Público, creador de cursos y contenido educativo sobre finanzas e impuestos.">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portafolio de Agustín Hansen — Analista de Datos. Excel, SQL, Power BI, Python, Tableau, automatización y reporting para LATAM.">
 
     <!-- Open Graph / Twitter -->
-    <meta property="og:title" content="Agustin Hansen — Portafolio" />
-    <meta property="og:description" content="Contador Público. Cursos y contenido educativo sobre finanzas, inversiones e impuestos para emprendedores." />
+    <meta property="og:title" content="Agustín Hansen — Analista de Datos" />
+    <meta property="og:description" content="Analista de Datos: análisis, transformación y automatización de datos; dashboards y reporting para clientes en Latinoamérica." />
     <meta property="og:image" content="/social-preview.svg" />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <title>Agustin Hansen — Portafolio</title>
+    <title>Agustín Hansen — Analista de Datos</title>
 
     <!-- Google Fonts / Performance -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,205 +27,194 @@
     <!-- Chart.js and Lucide (pinned versions, deferred) -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer crossorigin="anonymous"></script>
     <script src="https://unpkg.com/lucide@0.268.0/dist/lucide.min.js" defer crossorigin="anonymous"></script>
-
 </head>
 <body>
 
-    <a class="skip-link" href="#main">Saltar al contenido</a>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 
-    <nav role="navigation" aria-label="Principal">
-        <div class="container">
-            <div class="logo">AGUSTIN HANSEN</div>
-            <div class="nav-links">
-                <a href="#about">Sobre mí</a>
-                <a href="#projects">Proyectos</a>
-                <a href="#skills">Habilidades</a>
-                <a href="#contact">Contacto</a>
-                <a href="https://www.linkedin.com/in/agustin-hansen-b26816199" target="_blank" rel="noopener">LinkedIn</a>
+<nav role="navigation" aria-label="Principal">
+    <div class="container">
+        <div class="logo">AGUSTÍN HANSEN</div>
+        <div class="nav-links">
+            <a href="#about">Sobre mí</a>
+            <a href="#experience">Experiencia</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#contact">Contacto</a>
+            <a href="https://www.linkedin.com/in/agustin-hansen-b26816199" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://github.com/agushansen12" target="_blank" rel="noopener">GitHub</a>
+        </div>
+    </div>
+</nav>
+
+<header>
+    <div class="container">
+        <div class="hero-content">
+            <p class="hero-subtitle">Analista de Datos • Excel · SQL · Power BI · Python · Tableau</p>
+            <h1>Hola, soy <span>Agustín Hansen</span></h1>
+            <p class="hero-subtitle">Analista de Datos con experiencia en análisis, transformación y automatización de datos; desarrollo de dashboards y reporting para clientes en Latinoamérica.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn">Ver Proyectos</a>
+                <a href="https://linktr.ee/agushansen" class="btn" target="_blank" rel="noopener">Linktree (CV y recursos)</a>
             </div>
         </div>
-    </nav>
+    </div>
+</header>
 
-    <header>
-        <div class="container">
-            <div class="hero-content">
-                <p class="hero-subtitle">Contador Público • Emprendedor • Creador de Contenido</p>
-                <h1>Hola, soy <span>Agustin Hansen</span></h1>
-                <p class="hero-subtitle">Creo cursos y contenido educativo sobre finanzas, inversiones e impuestos para emprendedores y profesionales. Combino conocimiento contable con comunicación práctica para que temas complejos sean accesibles.</p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn">Ver Proyectos</a>
-                    <a href="https://linktr.ee/agushansen" class="btn" target="_blank" rel="noopener">Ver links / CV</a>
-                </div>
+<main id="main" class="container">
+
+    <!-- About / Impact -->
+    <section id="about">
+        <div class="section-title">Sobre mí</div>
+        <div class="analysis-preview">
+            <div>
+                <h2>Resumen profesional</h2>
+                <p class="muted" style="margin-top: 1rem;">
+                    Soy Analista de Datos ubicado en Buenos Aires (CABA). Me especializo en la optimización de procesos, automatización y desarrollo de reportes y dashboards usando Excel, Google Sheets, Power BI, SQL y Python. Trabajo con grandes volúmenes de datos y múltiples fuentes para transformar información compleja en insights accionables.
+                </p>
+                <p class="muted" style="margin-top: 1rem;">
+                    Tengo experiencia en análisis comercial y operativo para clientes en LATAM, implementando soluciones que reducen trabajo manual y mejoran la calidad y trazabilidad de la información.
+                </p>
+
+                <ul style="margin-top:1rem; color:var(--text-dim);">
+                    <li><strong>Ubicación:</strong> Buenos Aires, CABA</li>
+                    <li><strong>Email:</strong> <a href="mailto:agushansen77@gmail.com">agushansen77@gmail.com</a></li>
+                </ul>
+            </div>
+            <div class="analysis-chart-wrapper">
+                <canvas id="myChart" aria-label="Gráfica de actividad" role="img"></canvas>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main id="main" class="container">
-        
-        <!-- About / Impact -->
-        <section id="about">
-            <div class="section-title">Sobre mí</div>
-            <div class="analysis-preview">
-                <div>
-                    <h2>Resumen profesional</h2>
-                    <p class="muted" style="margin-top: 1rem;">
-                        Soy Contador Público (Universidad de Buenos Aires, 2015). Me especializo en crear cursos y contenido que ayudan a emprendedores a entender impuestos, finanzas e inversión en términos prácticos y aplicables.
-                    </p>
-                    <p class="muted" style="margin-top: 1rem;">
-                        Mi trabajo combina consultoría contable, creación de productos educativos y presencia en plataformas digitales (YouTube y cursos online) para mejorar la toma de decisiones financieras de mis clientes y estudiantes.
-                    </p>
-
-                    <ul style="margin-top:1rem; color:var(--text-dim);">
-                        <li><strong>Ubicación:</strong> Argentina</li>
-                        <li><strong>Formación:</strong> Contador Público, Universidad de Buenos Aires (UBA) — 2015</li>
-                    </ul>
-                </div>
-                <div class="analysis-chart-wrapper">
-                    <canvas id="myChart" aria-label="Gráfica de actividad" role="img"></canvas>
-                </div>
+    <!-- Experience -->
+    <section id="experience">
+        <div class="section-title">Experiencia</div>
+        <div class="project-grid">
+            <div class="project-card" tabindex="0">
+                <h3>Analista de Datos — GOUT (Global Outsourcing)</h3>
+                <p class="muted">2026 – Actualidad</p>
+                <ul class="muted">
+                    <li>Análisis y gestión de datos comerciales/operativos para DIRECTV, Claro, Prosegur y Payway en LATAM.</li>
+                    <li>Diseño y consolidación de procesos ETL, validación y limpieza de datos para reporting.</li>
+                    <li>Automatización con Google Sheets, Excel y Apps Script; desarrollo de dashboards en Power BI.</li>
+                </ul>
             </div>
-        </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <div class="section-title">Proyectos y Productos</div>
-            <div class="project-grid">
-                <div class="project-card" tabindex="0" role="article" aria-labelledby="project1-title">
-                    <i data-lucide="play-circle" class="icon-primary" aria-hidden="true"></i>
-                    <h3 id="project1-title">Canal de YouTube y Cursos Online</h3>
-                    <p class="muted">Producción de contenido educativo en finanzas, inversión y impuestos. Cursos con enfoque práctico para emprendedores.</p>
-                    <div class="project-tags">
-                        <span class="tag">Educación</span>
-                        <span class="tag">YouTube</span>
-                        <span class="tag">Cursos Online</span>
-                    </div>
-                </div>
-
-                <div class="project-card" tabindex="0" role="article" aria-labelledby="project2-title">
-                    <i data-lucide="briefcase" class="icon-primary" aria-hidden="true"></i>
-                    <h3 id="project2-title">Consultoría Contable y Fiscal</h3>
-                    <p class="muted">Asesoramiento en impuestos y gestión contable para pequeñas empresas y emprendedores.</p>
-                    <div class="project-tags">
-                        <span class="tag">Contabilidad</span>
-                        <span class="tag">Impuestos</span>
-                        <span class="tag">Asesoría</span>
-                    </div>
-                </div>
-
-                <div class="project-card" tabindex="0" role="article" aria-labelledby="project3-title">
-                    <i data-lucide="book" class="icon-primary" aria-hidden="true"></i>
-                    <h3 id="project3-title">Curso: Finanzas e Inversión</h3>
-                    <p class="muted">Programa estructurado para construir una estrategia financiera a largo plazo: ahorro, inversión y planificación fiscal.</p>
-                    <div class="project-tags">
-                        <span class="tag">Inversiones</span>
-                        <span class="tag">Planificación</span>
-                        <span class="tag">Educación Financiera</span>
-                    </div>
-                </div>
+            <div class="project-card" tabindex="0">
+                <h3>Asesor de Software / Analista CRM — Lambda class</h3>
+                <p class="muted">2025 – 2026</p>
+                <ul class="muted">
+                    <li>Gestión y análisis del pipeline en Pipedrive; segmentación de leads y mejora de procesos comerciales.</li>
+                    <li>Mantenimiento y limpieza de bases comerciales, reduciendo leads sin gestionar.</li>
+                </ul>
             </div>
-        </section>
 
-        <!-- Skills Section -->
-        <section id="skills">
-            <div class="section-title">Habilidades</div>
-            <div class="skills-container">
-                <div class="skill-item">Contabilidad</div>
-                <div class="skill-item">Impuestos</div>
-                <div class="skill-item">Educación & Cursos Online</div>
-                <div class="skill-item">Análisis Financiero</div>
-                <div class="skill-item">YouTube & Producción de Contenido</div>
-                <div class="skill-item">Excel / Modelado Financiero</div>
-                <div class="skill-item">Asesoría a PYMEs</div>
-                <div class="skill-item">Comunicación Educativa</div>
+            <div class="project-card" tabindex="0">
+                <h3>Analista de Operaciones — Empresa Gastronómica</h3>
+                <p class="muted">2023 – 2024</p>
+                <ul class="muted">
+                    <li>Análisis de ventas e inventarios, control de consumo y reportes operativos.</li>
+                </ul>
             </div>
-        </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="contact-area">
-                <i data-lucide="mail" class="icon-primary large-icon" aria-hidden="true"></i>
-                <h2>Contacto</h2>
-                <p class="muted">Puedes contactarme o ver mis recursos y CV en los enlaces siguientes.</p>
-                <div style="display:flex; gap:1rem; justify-content:center; margin-top:1rem; flex-wrap:wrap">
-                    <a href="mailto:agushansen77@gmail.com" class="btn">Enviar un correo</a>
-                    <a href="https://linktr.ee/agushansen" class="btn" target="_blank" rel="noopener">Linktree (CV y enlaces)</a>
-                    <a href="https://www.youtube.com/@AgustinHansen" class="btn" target="_blank" rel="noopener">YouTube</a>
-                    <a href="https://www.linkedin.com/in/agustin-hansen-b26816199" class="btn" target="_blank" rel="noopener">LinkedIn</a>
-                </div>
+            <div class="project-card" tabindex="0">
+                <h3>Coordinador de Operaciones — Ecofood Park</h3>
+                <p class="muted">2021 – 2023</p>
+                <ul class="muted">
+                    <li>Optimización de procesos de reposición y control de stock; supervisión operativa.</li>
+                </ul>
             </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2023 Agustin Hansen — Contador Público & Creador de Contenido</p>
         </div>
-    </footer>
+    </section>
 
-    <noscript>
-        <div style="padding:1rem; background:#fff; color:#000; text-align:center;">
-            Esta página funciona mejor con JavaScript habilitado. Algunas visualizaciones interactivas no estarán disponibles sin JS.
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-title">Proyectos de Datos</div>
+        <div class="project-grid">
+            <div class="project-card" tabindex="0" role="article" aria-labelledby="proj-ecom">
+                <h3 id="proj-ecom">Análisis de E-commerce con SQL</h3>
+                <p class="muted">Proyecto Personal — 2025</p>
+                <p class="muted">Análisis de más de 100.000 órdenes del dataset Olist usando SQL (SQLite). Cálculo de KPIs: revenue, AOV, tasa de cancelación y análisis logístico.</p>
+                <div class="project-tags">
+                    <span class="tag">SQL</span>
+                    <span class="tag">SQLite</span>
+                    <span class="tag">Reporting</span>
+                </div>
+                <p class="muted">Ver en GitHub: <a href="https://github.com/agushansen12" target="_blank" rel="noopener">repositorios</a></p>
+            </div>
         </div>
-    </noscript>
+    </section>
 
-    <script>
-    // Esperar a DOMContentLoaded para asegurar que los scripts deferred se hayan inicializado
-    document.addEventListener('DOMContentLoaded', function () {
-        // Inicializar iconos si la librería está disponible
-        if (window.lucide && typeof lucide.createIcons === 'function') {
-            try {
-                lucide.createIcons();
-            } catch (e) {
-                console.warn('Lucide icons init failed:', e);
-            }
-        }
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-title">Herramientas y Habilidades</div>
+        <div class="skills-container">
+            <div class="skill-item">SQL (avanzado)</div>
+            <div class="skill-item">Power BI / Tableau</div>
+            <div class="skill-item">Excel avanzado / Google Sheets</div>
+            <div class="skill-item">Python (automización y análisis)</div>
+            <div class="skill-item">Google Apps Script</div>
+            <div class="skill-item">PowerQuery / ETL</div>
+            <div class="skill-item">Reporting & Dashboards</div>
+            <div class="skill-item">Comunicación de insights</div>
+        </div>
+    </section>
 
-        // Configuración segura de Chart.js
-        const chartEl = document.getElementById('myChart');
-        if (chartEl && window.Chart) {
-            try {
-                const ctx = chartEl.getContext('2d');
-                new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],
-                        datasets: [{
-                            label: 'Actividad / Engagement (ejemplo)',
-                            data: [30, 45, 42, 60, 75, 95],
-                            borderColor: '#3b82f6',
-                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                            borderWidth: 2,
-                            fill: true,
-                            tension: 0.4,
-                            pointRadius: 0
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        plugins: { legend: { display: false } },
-                        scales: {
-                            y: { beginAtZero: true, grid: { color: '#2d2d35' }, ticks: { color: '#94a3b8', font: { family: 'JetBrains Mono' } } },
-                            x: { grid: { display: false }, ticks: { color: '#94a3b8', font: { family: 'JetBrains Mono' } } }
-                        }
-                    }
-                });
-            } catch (e) {
-                console.warn('Chart initialization failed:', e);
-            }
-        }
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="contact-area">
+            <i data-lucide="mail" class="icon-primary large-icon" aria-hidden="true"></i>
+            <h2>Contacto</h2>
+            <p class="muted">Email: <a href="mailto:agushansen77@gmail.com">agushansen77@gmail.com</a></p>
+            <div style="display:flex; gap:1rem; justify-content:center; margin-top:1rem; flex-wrap:wrap">
+                <a href="https://linktr.ee/agushansen" class="btn" target="_blank" rel="noopener">Linktree (CV y enlaces)</a>
+                <a href="https://www.youtube.com/@AgustinHansen" class="btn" target="_blank" rel="noopener">YouTube</a>
+                <a href="https://www.linkedin.com/in/agustin-hansen-b26816199" class="btn" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/agushansen12" class="btn" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+    </section>
 
-        // Efecto de Scroll suave para los links (mejor compatibilidad)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const target = this.getAttribute('href');
-                if (target && document.querySelector(target)) {
-                    e.preventDefault();
-                    document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
-                }
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Agustín Hansen — Analista de Datos</p>
+    </div>
+</footer>
+
+<noscript>
+    <div style="padding:1rem; background:#fff; color:#000; text-align:center;">
+        Esta página funciona mejor con JavaScript habilitado. Algunas visualizaciones interactivas no estarán disponibles sin JS.
+    </div>
+</noscript>
+
+<script>
+// Inicializar iconos y Chart.js de forma segura
+document.addEventListener('DOMContentLoaded', function () {
+    if (window.lucide && typeof lucide.createIcons === 'function') {
+        try { lucide.createIcons(); } catch (e) { console.warn('Lucide init failed', e); }
+    }
+
+    const chartEl = document.getElementById('myChart');
+    if (chartEl && window.Chart) {
+        try {
+            const ctx = chartEl.getContext('2d');
+            new Chart(ctx, {
+                type: 'line', data: { labels: ['Ene','Feb','Mar','Abr','May','Jun'], datasets: [{ label: 'Métrica ejemplo', data: [30,45,42,60,75,95], borderColor: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.1)', fill:true, tension:0.4, pointRadius:0 }] },
+                options: { responsive:true, plugins:{ legend:{display:false} }, scales:{ y:{ beginAtZero:true, grid:{color:'#2d2d35'}, ticks:{color:'#94a3b8', font:{family:'JetBrains Mono'}} }, x:{ grid:{display:false}, ticks:{color:'#94a3b8', font:{family:'JetBrains Mono'}} } } }
             });
+        } catch(e) { console.warn('Chart error', e); }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const target = this.getAttribute('href');
+            if (target && document.querySelector(target)) { e.preventDefault(); document.querySelector(target).scrollIntoView({ behavior: 'smooth' }); }
         });
     });
-    </script>
+});
+</script>
 </body>
 </html>

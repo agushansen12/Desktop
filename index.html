@@ -117,16 +117,32 @@
 
         <!-- Skills Section -->
         <section id="skills">
-            <div class="section-title">Habilidades</div>
+            <div class="section-title">Herramientas y Habilidades</div>
             <div class="skills-container">
-                <div class="skill-item">Contabilidad</div>
-                <div class="skill-item">Impuestos</div>
-                <div class="skill-item">Educación & Cursos Online</div>
-                <div class="skill-item">Análisis Financiero</div>
-                <div class="skill-item">YouTube & Producción de Contenido</div>
-                <div class="skill-item">Excel / Modelado Financiero</div>
-                <div class="skill-item">Asesoría a PYMEs</div>
-                <div class="skill-item">Comunicación Educativa</div>
+                <div class="skill-item">
+                    <i data-lucide="file-text" class="skill-icon" aria-hidden="true"></i>
+                    <p>Excel</p>
+                </div>
+                <div class="skill-item">
+                    <i data-lucide="calculator" class="skill-icon" aria-hidden="true"></i>
+                    <p>Contabilidad</p>
+                </div>
+                <div class="skill-item">
+                    <i data-lucide="book-open" class="skill-icon" aria-hidden="true"></i>
+                    <p>Educación Online</p>
+                </div>
+                <div class="skill-item">
+                    <i data-lucide="bar-chart-2" class="skill-icon" aria-hidden="true"></i>
+                    <p>Análisis Financiero</p>
+                </div>
+                <div class="skill-item">
+                    <i data-lucide="video" class="skill-icon" aria-hidden="true"></i>
+                    <p>Producción de Contenido</p>
+                </div>
+                <div class="skill-item">
+                    <i data-lucide="briefcase" class="skill-icon" aria-hidden="true"></i>
+                    <p>Asesoría a PYMEs</p>
+                </div>
             </div>
         </section>
 
@@ -138,7 +154,6 @@
                 <p class="muted">Puedes contactarme o ver mis recursos y CV en los enlaces siguientes.</p>
                 <div style="display:flex; gap:1rem; justify-content:center; margin-top:1rem; flex-wrap:wrap">
                     <a href="https://linktr.ee/agushan" class="btn" target="_blank" rel="noopener">Linktree (CV y enlaces)</a>
-                    <a href="https://www.youtube.com/@AgustinHansen" class="btn" target="_blank" rel="noopener">YouTube</a>
                     <a href="https://www.linkedin.com/in/agustin-hansen-b26816199" class="btn" target="_blank" rel="noopener">LinkedIn</a>
                 </div>
             </div>
@@ -204,13 +219,43 @@
             }
         }
 
-        // Efecto de Scroll suave para los links (mejor compatibilidad)
+        // Scroll suave por secciones (Snap scroll)
+        document.addEventListener('wheel', function(e) {
+            const sections = document.querySelectorAll('header, section, footer');
+            let currentSection = null;
+            let closestDistance = Infinity;
+
+            // Encontrar la sección más cercana al viewport
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                const distance = Math.abs(rect.top);
+                
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    currentSection = section;
+                }
+            });
+
+            // Si estamos dentro de una sección y hacemos scroll, saltar a la próxima
+            if (currentSection && closestDistance < window.innerHeight * 0.5) {
+                const nextSection = currentSection.nextElementSibling;
+                if (nextSection && e.deltaY > 0) {
+                    e.preventDefault();
+                    nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else if (currentSection.previousElementSibling && e.deltaY < 0) {
+                    e.preventDefault();
+                    currentSection.previousElementSibling.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        }, { passive: false });
+
+        // Efecto de Scroll suave para los links de navegación
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const target = this.getAttribute('href');
                 if (target && document.querySelector(target)) {
                     e.preventDefault();
-                    document.querySelector(target).scrollIntoView({ behavior: 'smooth' });
+                    document.querySelector(target).scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });

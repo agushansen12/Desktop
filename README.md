@@ -1,35 +1,95 @@
-# Portafolio — Agustin Hansen
+# Agustin Hansen — Analista de Datos
 
-Sitio web estático que presenta el portafolio profesional de Agustin Hansen: proyectos, habilidades y una vista previa interactiva creada con Chart.js. Diseñado para mostrar trabajos en contabilidad, análisis de datos y automatización.
+**Automatización y analytics para llevar tu negocio al siguiente nivel.**
 
-Archivos principales
-- `index.html` — Página principal del portafolio.
-- `styles.css` — Estilos del sitio.
-- `README.md` — Este archivo.
+Analista de Datos especializado en transformar volúmenes de información en dashboards accionables y automatizar procesos. Con expertise en SQL, Python, Power BI y Google Sheets, junto con automatización de flujos de trabajo usando n8n y Apps Script.
 
-Tecnologías
-- HTML5, CSS, JavaScript (vanilla)
-- Chart.js
-- Lucide Icons
+---
 
-Cómo ejecutar localmente
+## 📌 Sobre mí
 
-1. Abrir `index.html` directamente en el navegador, o
-2. Servir el directorio con un servidor estático:
+Soy Analista de Datos especializado en transformar información en insights accionables. Me especializo en crear dashboards interactivos, automatizar procesos y desarrollar soluciones analíticas que impulsan decisiones basadas en datos.
 
-   - Con Python 3:
-     ```bash
-     python -m http.server 8000
-     # luego abrir http://localhost:8000
-     ```
+Mi expertise combina análisis avanzado con SQL, Python, Power BI y Google Sheets, junto con automatización de flujos de trabajo usando herramientas como n8n y Apps Script para eliminar tareas manuales repetitivas y mejorar la eficiencia operacional.
 
-   - Con `serve` (Node):
-     ```bash
-     npm install -g serve
-     serve .
-     ```
+- **📍 Ubicación:** Argentina
+- **🎯 Especialización:** Análisis de Datos, Automatización y Reportes
 
-Contacto y enlaces
+---
 
-- LinkedIn: https://www.linkedin.com/in/agustin-hansen-b26816199
-- Linktree (CV y recursos): https://linktr.ee/agushansen
+## 🚀 Proyectos destacados
+
+### 📊 Análisis SQL - Olist
+Análisis completo de datos de ventas e-commerce utilizando SQL. Consultas avanzadas para extraer insights sobre el comportamiento de clientes, productos más vendidos y tendencias de mercado.
+
+**Tecnologías:** SQL • E-commerce • Análisis
+
+### 📈 Dashboards Interactivos
+Creación de dashboards dinámicos en Power BI y Google Sheets que permiten visualizar KPIs en tiempo real y tomar decisiones basadas en datos.
+
+**Tecnologías:** Power BI • Google Sheets • Dashboards
+
+### ⚡ Automatización de Procesos
+Automatización de flujos de trabajo con n8n, Python y Google Apps Script para eliminar tareas manuales repetitivas y mejorar la eficiencia operacional.
+
+**Tecnologías:** n8n • Python • Automatización
+
+---
+
+## 🛠 Herramientas y tecnologías
+
+- **SQL** — Consultas avanzadas y análisis de bases de datos
+- **Python** — Análisis y automatización de datos
+- **Google Sheets** — Dashboards y reportes dinámicos
+- **Power BI** — Visualización y BI empresarial
+- **Tableau** — Análisis visual avanzado
+- **n8n** — Automatización de flujos de trabajo
+- **Apps Script** — Automatización en Google Workspace
+
+---
+
+## 📞 Contacto y enlaces
+
+Puedes contactarme o ver mis recursos y CV en los siguientes enlaces:
+
+- **[LinkedIn](https://www.linkedin.com/in/agustin-hansen-b26816199)** — Conecta conmigo
+- **[Linktree](https://linktr.ee/agushansen)** — CV, recursos y más enlaces
+
+---
+
+## 📋 Acerca del repositorio
+
+Este repositorio contiene el código fuente de mi portafolio web. Es un sitio estático que presenta mis proyectos, habilidades y una experiencia interactiva.
+
+### Estructura
+- `index.html` — Página principal del portafolio
+- `styles.css` — Estilos responsivos del sitio
+- `README.md` — Este archivo
+
+### Tecnologías utilizadas
+- HTML5, CSS3, JavaScript (vanilla)
+- Chart.js — Gráficos interactivos
+- Lucide Icons — Iconografía moderna
+
+### Ejecutar localmente
+
+**Opción 1: Abrir directamente**
+```bash
+# Solo abre index.html en tu navegador
+```
+
+**Opción 2: Con Python**
+```bash
+python -m http.server 8000
+# Luego abre http://localhost:8000
+```
+
+**Opción 3: Con Node (serve)**
+```bash
+npm install -g serve
+serve .
+```
+
+---
+
+**© 2026 Agustin Hansen • Analista de Datos**

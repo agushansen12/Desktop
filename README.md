@@ -1,6 +1,6 @@
 # Portafolio — Agustin Hansen
 
-Sitio web estático que presenta el portafolio profesional de Agustin Hansen: proyectos, habilidades y una vista previa interactiva creada con Chart.js. Diseñado para mostrar trabajos en contabilidad, educación financiera y creación de contenido.
+Sitio web estático que presenta el portafolio profesional de Agustin Hansen: proyectos, habilidades y una vista previa interactiva creada con Chart.js. Diseñado para mostrar trabajos en contabilidad, análisis de datos y automatización.
 
 Archivos principales
 - `index.html` — Página principal del portafolio.
@@ -32,4 +32,4 @@ Cómo ejecutar localmente
 Contacto y enlaces
 
 - LinkedIn: https://www.linkedin.com/in/agustin-hansen-b26816199
-- Linktree (CV y recursos): https://linktr.ee/agustansen
+- Linktree (CV y recursos): https://linktr.ee/agushansen
